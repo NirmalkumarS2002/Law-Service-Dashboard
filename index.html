@@ -3,15 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
 
   <title>Law Service Login</title>
 
   <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+    href="https://fonts.googleapis.com">
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- FONT AWESOME -->
@@ -36,13 +38,13 @@
       justify-content:center;
       align-items:center;
 
-      padding:12px;
+      padding:10px;
 
       overflow:auto;
 
       background:
       linear-gradient(
-        rgba(0, 0, 0, 0.295),
+        rgba(0,0,0,0.35),
         rgba(0,0,0,0.88)
       ),
       url('./src/login-bg.webp');
@@ -54,6 +56,7 @@
     }
 
     body::before{
+
       content:"";
 
       position:absolute;
@@ -68,32 +71,32 @@
 
     .login-box{
 
-      width:390px;
+      width:340px;
 
-      padding:18px 26px;
+      padding:20px 30px;
 
-      border-radius:24px;
+      border-radius:20px;
 
       background:rgba(0,0,0,0.55);
 
-      border:1px solid rgba(212,175,55,0.45);
+      border:1px solid rgba(212,175,55,0.35);
 
-      backdrop-filter:blur(14px);
+      backdrop-filter:blur(12px);
 
       box-shadow:
-      0 0 25px rgba(0,0,0,0.6),
-      0 0 15px rgba(212,175,55,0.1);
+      0 0 20px rgba(0,0,0,0.5),
+      0 0 10px rgba(212,175,55,0.08);
 
       position:relative;
       z-index:10;
     }
 
-    /* LOGO */
+    /* LOGO ICON */
 
     .logo-circle{
 
-      width:72px;
-      height:72px;
+      width:58px;
+      height:58px;
 
       border-radius:50%;
 
@@ -110,26 +113,53 @@
       justify-content:center;
       align-items:center;
 
-      margin-bottom:12px;
+      margin-bottom:10px;
 
       box-shadow:
-      0 0 30px rgba(212,175,55,0.25);
+      0 0 20px rgba(212,175,55,0.18);
     }
 
     .logo-circle i{
-      font-size:30px;
+
+      font-size:24px;
+
       color:#111;
     }
 
-    /* TITLE */
+    /* COMPANY LOGO */
 
     .logowrap{
-        display: flex;
-        justify-content: center;
-        padding: 20px;
+
+      display:flex;
+      justify-content:center;
+
+      margin-bottom:2px;
     }
+
     .companylogo{
-        width: clamp(170px,18vw,220px);
+
+      width:clamp(170px,19vw,210px);
+
+      object-fit:contain;
+    }
+
+    /* LOGIN HERE TEXT */
+
+    .login-here-text{
+
+      text-align:center;
+
+      color:white;
+
+      font-size:18px;
+
+      font-weight:600;
+
+      margin-top:-2px;
+
+      margin-bottom:12px;
+
+      letter-spacing:1px;
     }
 
     /* LINE DESIGN */
@@ -142,18 +172,22 @@
 
       gap:10px;
 
-      margin-bottom:16px;
+      margin-bottom:14px;
     }
 
     .line{
-      width:80px;
+
+      width:65px;
       height:1px;
+
       background:#9b7a22;
     }
 
     .line-design i{
+
       color:#c89b2d;
-      font-size:11px;
+
+      font-size:10px;
     }
 
     /* SUBTITLE */
@@ -164,15 +198,18 @@
 
       color:#d3d3d3;
 
-      font-size:13px;
+      font-size:12px;
 
-      margin-bottom:22px;
+      margin-bottom:16px;
+
+      line-height:1.5;
     }
 
     /* INPUT BOX */
 
     .input-box{
-      margin-bottom:16px;
+
+      margin-bottom:14px;
     }
 
     .input-box label{
@@ -181,14 +218,15 @@
 
       color:#e6c15a;
 
-      margin-bottom:8px;
+      margin-bottom:6px;
 
-      font-size:14px;
+      font-size:13px;
 
       font-weight:600;
     }
 
     .input-field{
+
       position:relative;
     }
 
@@ -198,14 +236,14 @@
 
       position:absolute;
 
-      left:18px;
+      left:16px;
       top:50%;
 
       transform:translateY(-50%);
 
       color:#d4af37;
 
-      font-size:16px;
+      font-size:14px;
     }
 
     /* INPUTS */
@@ -215,20 +253,20 @@
 
       width:100%;
 
-      height:54px;
+      height:46px;
 
-      border-radius:16px;
+      border-radius:12px;
 
-      border:1px solid rgba(212,175,55,0.45);
+      border:1px solid rgba(212,175,55,0.35);
 
-      background:rgba(0,0,0,0.4);
+      background:rgba(0,0,0,0.35);
 
       color:white;
 
-      font-size:15px;
+      font-size:13px;
 
-      padding-left:55px;
-      padding-right:50px;
+      padding-left:45px;
+      padding-right:40px;
 
       outline:none;
 
@@ -236,10 +274,12 @@
     }
 
     .input-field input::placeholder{
+
       color:#bdbdbd;
     }
 
     .input-field select option{
+
       color:black;
     }
 
@@ -249,7 +289,7 @@
       border-color:#f5d76e;
 
       box-shadow:
-      0 0 15px rgba(212,175,55,0.15);
+      0 0 10px rgba(212,175,55,0.1);
     }
 
     /* EYE BUTTON */
@@ -258,7 +298,7 @@
 
       position:absolute;
 
-      right:18px;
+      right:14px;
       top:50%;
 
       transform:translateY(-50%);
@@ -267,7 +307,7 @@
 
       cursor:pointer;
 
-      font-size:18px;
+      font-size:14px;
     }
 
     /* LOGIN BUTTON */
@@ -276,11 +316,11 @@
 
       width:100%;
 
-      height:56px;
+      height:46px;
 
       border:none;
 
-      border-radius:16px;
+      border-radius:12px;
 
       background:
       linear-gradient(
@@ -291,7 +331,7 @@
 
       color:black;
 
-      font-size:17px;
+      font-size:14px;
 
       font-weight:700;
 
@@ -301,11 +341,11 @@
       justify-content:center;
       align-items:center;
 
-      gap:10px;
+      gap:8px;
 
       transition:0.3s;
 
-      margin-top:4px;
+      margin-top:2px;
     }
 
     .login-btn:hover{
@@ -313,7 +353,7 @@
       transform:translateY(-2px);
 
       box-shadow:
-      0 10px 20px rgba(212,175,55,0.2);
+      0 8px 16px rgba(212,175,55,0.15);
     }
 
     /* BOTTOM LINE */
@@ -324,14 +364,15 @@
       align-items:center;
       justify-content:center;
 
-      gap:10px;
+      gap:8px;
 
-      margin-top:20px;
-      margin-bottom:14px;
+      margin-top:14px;
+      margin-bottom:10px;
     }
 
     .bottom-line .line{
-      width:95px;
+
+      width:55px;
     }
 
     /* FOOTER */
@@ -342,7 +383,7 @@
 
       color:#bdbdbd;
 
-      font-size:14px;
+      font-size:12px;
     }
 
     .footer-text a{
@@ -354,114 +395,30 @@
       font-weight:600;
     }
 
-    /* RESPONSIVE */
-/* MOBILE VIEW FIX */
+    /* MOBILE */
 
-@media(max-width:768px){
+    @media(max-width:768px){
 
-  body{
-    padding:8px;
-    align-items:center;
-    overflow:auto;
-  }
+      .login-box{
 
-  .login-box{
+        width:100%;
 
-    width:100%;
+        max-width:320px;
 
-    max-width:350px;
+        padding:12px 16px;
+      }
 
-    padding:14px 18px;
+      .companylogo{
 
-    border-radius:20px;
+        width:120px;
+      }
 
-    margin-top:10px;
-    margin-bottom:10px;
-  }
+      .login-here-text{
 
-  .logo-circle{
-    width:60px;
-    height:60px;
+        font-size:14px;
+      }
 
-    margin-bottom:10px;
-  }
-
-  .logo-circle i{
-    font-size:24px;
-  }
-
-  .line-design{
-    margin-bottom:10px;
-  }
-
-  .line{
-    width:50px;
-  }
-
-  .subtitle{
-    font-size:12px;
-    margin-bottom:16px;
-    line-height:1.5;
-  }
-
-  .input-box{
-    margin-bottom:14px;
-  }
-
-  .input-box label{
-    font-size:13px;
-    margin-bottom:6px;
-  }
-
-  .input-field input,
-  .input-field select{
-
-    height:38px;
-
-    font-size:14px;
-
-    border-radius:14px;
-
-    padding-left:48px;
-    border-radius: 10px;
-    padding-right:45px;
-  }
-
-  .input-field i.left-icon{
-    left:16px;
-    font-size:14px;
-  }
-
-  .eye-btn{
-    right:16px;
-    font-size:14px;
-  }
-
-  .login-btn{
-
-    height:38px;
-
-    font-size:16px;
-
-    border-radius:10px;
-
-    margin-top:4px;
-  }
-
-  .bottom-line{
-    margin-top:14px;
-    margin-bottom:10px;
-  }
-
-  .bottom-line .line{
-    width:65px;
-  }
-
-  .footer-text{
-    font-size:13px;
-  }
-
-}
+    }
 
   </style>
 </head>
@@ -470,16 +427,34 @@
 
   <div class="login-box">
 
-    <!-- LOGO -->
+    <!-- LOGO ICON -->
+
     <div class="logo-circle">
+
       <i class="fa-solid fa-scale-balanced"></i>
+
     </div>
+
+    <!-- COMPANY LOGO -->
 
     <div class="logowrap">
-        <img src="./src/logo.webp" alt="company logo" class="companylogo">
+
+      <img src="./src/logo.webp"
+        alt="company logo"
+        class="companylogo">
+
     </div>
 
+    <!-- LOGIN HERE -->
+
+    <p class="login-here-text">
+
+      Login Here
+
+    </p>
+
     <!-- LINE -->
+
     <div class="line-design">
 
       <div class="line"></div>
@@ -491,11 +466,15 @@
     </div>
 
     <!-- SUBTITLE -->
+
     <p class="subtitle">
+
       Secure portal access for Admin and Client
+
     </p>
 
     <!-- ROLE -->
+
     <div class="input-box">
 
       <label>Select Role</label>
@@ -519,6 +498,7 @@
     </div>
 
     <!-- EMAIL -->
+
     <div class="input-box">
 
       <label>Email Address</label>
@@ -536,6 +516,7 @@
     </div>
 
     <!-- PASSWORD -->
+
     <div class="input-box">
 
       <label>Password</label>
@@ -550,6 +531,7 @@
           id="password">
 
         <!-- EYE BUTTON -->
+
         <span
           class="eye-btn"
           id="togglePassword">
@@ -563,6 +545,7 @@
     </div>
 
     <!-- LOGIN BUTTON -->
+
     <button class="login-btn">
 
       <i class="fa-solid fa-scale-balanced"></i>
@@ -571,24 +554,26 @@
 
     </button>
 
-    <!-- BOTTOM DESIGN -->
+    <!-- BOTTOM LINE -->
+
     <div class="bottom-line">
 
       <div class="line"></div>
 
       <i class="fa-solid fa-link"
-        style="color:#c89b2d;font-size:11px;"></i>
+        style="color:#c89b2d;font-size:10px;"></i>
 
       <div class="line"></div>
 
     </div>
 
     <!-- FOOTER -->
+
     <div class="footer-text">
 
       Forgot Password?
 
-      <a href="#">
+      <a href="sign.html">
         Sign Up
       </a>
 
@@ -618,8 +603,6 @@
 
     e.preventDefault();
 
-    // GET VALUES
-
     const role =
       roleSelect.value.trim();
 
@@ -629,18 +612,18 @@
     const password =
       passwordInput.value.trim();
 
-    // VALIDATION
+    // ROLE VALIDATION
 
-    if (
-      role === "Select Role"
-    ) {
+    if(role === "Select Role"){
 
       alert("Please select role");
 
       return;
     }
 
-    if (email === "") {
+    // EMAIL VALIDATION
+
+    if(email === ""){
 
       alert("Please enter email address");
 
@@ -649,12 +632,10 @@
       return;
     }
 
-    // EMAIL VALIDATION
-
     const emailPattern =
       /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-    if (!email.match(emailPattern)) {
+    if(!email.match(emailPattern)){
 
       alert("Please enter valid email");
 
@@ -663,7 +644,9 @@
       return;
     }
 
-    if (password === "") {
+    // PASSWORD VALIDATION
+
+    if(password === ""){
 
       alert("Please enter password");
 
@@ -672,9 +655,7 @@
       return;
     }
 
-    // PASSWORD LENGTH
-
-    if (password.length < 6) {
+    if(password.length < 6){
 
       alert("Password must be minimum 6 characters");
 
@@ -685,18 +666,16 @@
 
     // ROLE BASED REDIRECT
 
-    if (role === "Admin") {
+    if(role === "Admin"){
 
       window.location.href =
         "admin-dashboard.html";
-
     }
 
-    else if (role === "Client") {
+    else if(role === "Client"){
 
       window.location.href =
         "client-dashboard.html";
-
     }
 
   });
@@ -710,15 +689,15 @@
 
     const type =
       passwordInput.getAttribute("type") === "password"
-        ? "text"
-        : "password";
+      ? "text"
+      : "password";
 
     passwordInput.setAttribute("type", type);
 
     togglePassword.innerHTML =
       type === "password"
-        ? '<i class="fa-solid fa-eye"></i>'
-        : '<i class="fa-solid fa-eye-slash"></i>';
+      ? '<i class="fa-solid fa-eye"></i>'
+      : '<i class="fa-solid fa-eye-slash"></i>';
 
   });
 
