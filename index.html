@@ -507,9 +507,10 @@
 
         <i class="fa-solid fa-envelope left-icon"></i>
 
-        <input
-          type="email"
-          placeholder="Enter your email address">
+      <input
+  type="email"
+  id="email"
+  placeholder="Enter your email address">
 
       </div>
 
@@ -666,17 +667,31 @@
 
     // ROLE BASED REDIRECT
 
-    if(role === "Admin"){
+   // ROLE BASED REDIRECT
 
-      window.location.href =
-        "admin-dashboard.html";
-    }
+if(role === "Admin"){
 
-    else if(role === "Client"){
+  // SAVE EMAIL
 
-      window.location.href =
-        "client-dashboard.html";
-    }
+  localStorage.setItem(
+    "adminEmail",
+    email
+  );
+
+  window.location.href =
+    "admin.html";
+}
+
+else if(role === "Client"){
+
+  localStorage.setItem(
+    "adminEmail",
+    email
+  );
+
+  window.location.href =
+    "client.html";
+}
 
   });
 
