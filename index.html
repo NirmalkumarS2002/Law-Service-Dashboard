@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Law Service Login</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+
+      font-family:'Poppins', sans-serif;
+
+      min-height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      padding:12px;
+
+      overflow:auto;
+
+      background:
+      linear-gradient(
+        rgba(0, 0, 0, 0.295),
+        rgba(0,0,0,0.88)
+      ),
+      url('./src/login-bg.webp');
+
+      background-size:cover;
+      background-position:center;
+
+      position:relative;
+    }
+
+    body::before{
+      content:"";
+
+      position:absolute;
+
+      width:100%;
+      height:100%;
+
+      backdrop-filter:blur(3px);
+    }
+
+    /* LOGIN CARD */
+
+    .login-box{
+
+      width:390px;
+
+      padding:18px 26px;
+
+      border-radius:24px;
+
+      background:rgba(0,0,0,0.55);
+
+      border:1px solid rgba(212,175,55,0.45);
+
+      backdrop-filter:blur(14px);
+
+      box-shadow:
+      0 0 25px rgba(0,0,0,0.6),
+      0 0 15px rgba(212,175,55,0.1);
+
+      position:relative;
+      z-index:10;
+    }
+
+    /* LOGO */
+
+    .logo-circle{
+
+      width:72px;
+      height:72px;
+
+      border-radius:50%;
+
+      margin:auto;
+
+      background:
+      linear-gradient(
+        135deg,
+        #c89b2d,
+        #f5de87
+      );
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      margin-bottom:12px;
+
+      box-shadow:
+      0 0 30px rgba(212,175,55,0.25);
+    }
+
+    .logo-circle i{
+      font-size:30px;
+      color:#111;
+    }
+
+    /* TITLE */
+
+    .logowrap{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .companylogo{
+        width: clamp(170px,18vw,220px);
+    }
+
+    /* LINE DESIGN */
+
+    .line-design{
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      gap:10px;
+
+      margin-bottom:16px;
+    }
+
+    .line{
+      width:80px;
+      height:1px;
+      background:#9b7a22;
+    }
+
+    .line-design i{
+      color:#c89b2d;
+      font-size:11px;
+    }
+
+    /* SUBTITLE */
+
+    .subtitle{
+
+      text-align:center;
+
+      color:#d3d3d3;
+
+      font-size:13px;
+
+      margin-bottom:22px;
+    }
+
+    /* INPUT BOX */
+
+    .input-box{
+      margin-bottom:16px;
+    }
+
+    .input-box label{
+
+      display:block;
+
+      color:#e6c15a;
+
+      margin-bottom:8px;
+
+      font-size:14px;
+
+      font-weight:600;
+    }
+
+    .input-field{
+      position:relative;
+    }
+
+    /* LEFT ICON */
+
+    .input-field i.left-icon{
+
+      position:absolute;
+
+      left:18px;
+      top:50%;
+
+      transform:translateY(-50%);
+
+      color:#d4af37;
+
+      font-size:16px;
+    }
+
+    /* INPUTS */
+
+    .input-field input,
+    .input-field select{
+
+      width:100%;
+
+      height:54px;
+
+      border-radius:16px;
+
+      border:1px solid rgba(212,175,55,0.45);
+
+      background:rgba(0,0,0,0.4);
+
+      color:white;
+
+      font-size:15px;
+
+      padding-left:55px;
+      padding-right:50px;
+
+      outline:none;
+
+      transition:0.3s;
+    }
+
+    .input-field input::placeholder{
+      color:#bdbdbd;
+    }
+
+    .input-field select option{
+      color:black;
+    }
+
+    .input-field input:focus,
+    .input-field select:focus{
+
+      border-color:#f5d76e;
+
+      box-shadow:
+      0 0 15px rgba(212,175,55,0.15);
+    }
+
+    /* EYE BUTTON */
+
+    .eye-btn{
+
+      position:absolute;
+
+      right:18px;
+      top:50%;
+
+      transform:translateY(-50%);
+
+      color:#d4af37;
+
+      cursor:pointer;
+
+      font-size:18px;
+    }
+
+    /* LOGIN BUTTON */
+
+    .login-btn{
+
+      width:100%;
+
+      height:56px;
+
+      border:none;
+
+      border-radius:16px;
+
+      background:
+      linear-gradient(
+        135deg,
+        #c89b2d,
+        #f5de87
+      );
+
+      color:black;
+
+      font-size:17px;
+
+      font-weight:700;
+
+      cursor:pointer;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      gap:10px;
+
+      transition:0.3s;
+
+      margin-top:4px;
+    }
+
+    .login-btn:hover{
+
+      transform:translateY(-2px);
+
+      box-shadow:
+      0 10px 20px rgba(212,175,55,0.2);
+    }
+
+    /* BOTTOM LINE */
+
+    .bottom-line{
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      gap:10px;
+
+      margin-top:20px;
+      margin-bottom:14px;
+    }
+
+    .bottom-line .line{
+      width:95px;
+    }
+
+    /* FOOTER */
+
+    .footer-text{
+
+      text-align:center;
+
+      color:#bdbdbd;
+
+      font-size:14px;
+    }
+
+    .footer-text a{
+
+      color:#d4af37;
+
+      text-decoration:none;
+
+      font-weight:600;
+    }
+
+    /* RESPONSIVE */
+/* MOBILE VIEW FIX */
+
+@media(max-width:768px){
+
+  body{
+    padding:8px;
+    align-items:center;
+    overflow:auto;
+  }
+
+  .login-box{
+
+    width:100%;
+
+    max-width:350px;
+
+    padding:14px 18px;
+
+    border-radius:20px;
+
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+
+  .logo-circle{
+    width:60px;
+    height:60px;
+
+    margin-bottom:10px;
+  }
+
+  .logo-circle i{
+    font-size:24px;
+  }
+
+  .line-design{
+    margin-bottom:10px;
+  }
+
+  .line{
+    width:50px;
+  }
+
+  .subtitle{
+    font-size:12px;
+    margin-bottom:16px;
+    line-height:1.5;
+  }
+
+  .input-box{
+    margin-bottom:14px;
+  }
+
+  .input-box label{
+    font-size:13px;
+    margin-bottom:6px;
+  }
+
+  .input-field input,
+  .input-field select{
+
+    height:38px;
+
+    font-size:14px;
+
+    border-radius:14px;
+
+    padding-left:48px;
+    border-radius: 10px;
+    padding-right:45px;
+  }
+
+  .input-field i.left-icon{
+    left:16px;
+    font-size:14px;
+  }
+
+  .eye-btn{
+    right:16px;
+    font-size:14px;
+  }
+
+  .login-btn{
+
+    height:38px;
+
+    font-size:16px;
+
+    border-radius:10px;
+
+    margin-top:4px;
+  }
+
+  .bottom-line{
+    margin-top:14px;
+    margin-bottom:10px;
+  }
+
+  .bottom-line .line{
+    width:65px;
+  }
+
+  .footer-text{
+    font-size:13px;
+  }
+
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+
+    <!-- LOGO -->
+    <div class="logo-circle">
+      <i class="fa-solid fa-scale-balanced"></i>
+    </div>
+
+    <div class="logowrap">
+        <img src="./src/logo.webp" alt="company logo" class="companylogo">
+    </div>
+
+    <!-- LINE -->
+    <div class="line-design">
+
+      <div class="line"></div>
+
+      <i class="fa-solid fa-link"></i>
+
+      <div class="line"></div>
+
+    </div>
+
+    <!-- SUBTITLE -->
+    <p class="subtitle">
+      Secure portal access for Admin and Client
+    </p>
+
+    <!-- ROLE -->
+    <div class="input-box">
+
+      <label>Select Role</label>
+
+      <div class="input-field">
+
+        <i class="fa-solid fa-user-shield left-icon"></i>
+
+        <select>
+
+          <option>Select Role</option>
+
+          <option>Admin</option>
+
+          <option>Client</option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <!-- EMAIL -->
+    <div class="input-box">
+
+      <label>Email Address</label>
+
+      <div class="input-field">
+
+        <i class="fa-solid fa-envelope left-icon"></i>
+
+        <input
+          type="email"
+          placeholder="Enter your email address">
+
+      </div>
+
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="input-box">
+
+      <label>Password</label>
+
+      <div class="input-field">
+
+        <i class="fa-solid fa-lock left-icon"></i>
+
+        <input
+          type="password"
+          placeholder="Enter your password"
+          id="password">
+
+        <!-- EYE BUTTON -->
+        <span
+          class="eye-btn"
+          id="togglePassword">
+
+          <i class="fa-solid fa-eye"></i>
+
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- LOGIN BUTTON -->
+    <button class="login-btn">
+
+      <i class="fa-solid fa-scale-balanced"></i>
+
+      Login Now
+
+    </button>
+
+    <!-- BOTTOM DESIGN -->
+    <div class="bottom-line">
+
+      <div class="line"></div>
+
+      <i class="fa-solid fa-link"
+        style="color:#c89b2d;font-size:11px;"></i>
+
+      <div class="line"></div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-text">
+
+      Forgot Password?
+
+      <a href="#">
+        Sign Up
+      </a>
+
+    </div>
+
+  </div>
+
+<script>
+
+  // GET FORM ELEMENTS
+
+  const roleSelect =
+    document.querySelector("select");
+
+  const emailInput =
+    document.querySelector('input[type="email"]');
+
+  const passwordInput =
+    document.getElementById("password");
+
+  const loginBtn =
+    document.querySelector(".login-btn");
+
+  // LOGIN BUTTON CLICK
+
+  loginBtn.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    // GET VALUES
+
+    const role =
+      roleSelect.value.trim();
+
+    const email =
+      emailInput.value.trim();
+
+    const password =
+      passwordInput.value.trim();
+
+    // VALIDATION
+
+    if (
+      role === "Select Role"
+    ) {
+
+      alert("Please select role");
+
+      return;
+    }
+
+    if (email === "") {
+
+      alert("Please enter email address");
+
+      emailInput.focus();
+
+      return;
+    }
+
+    // EMAIL VALIDATION
+
+    const emailPattern =
+      /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (!email.match(emailPattern)) {
+
+      alert("Please enter valid email");
+
+      emailInput.focus();
+
+      return;
+    }
+
+    if (password === "") {
+
+      alert("Please enter password");
+
+      passwordInput.focus();
+
+      return;
+    }
+
+    // PASSWORD LENGTH
+
+    if (password.length < 6) {
+
+      alert("Password must be minimum 6 characters");
+
+      passwordInput.focus();
+
+      return;
+    }
+
+    // ROLE BASED REDIRECT
+
+    if (role === "Admin") {
+
+      window.location.href =
+        "admin-dashboard.html";
+
+    }
+
+    else if (role === "Client") {
+
+      window.location.href =
+        "client-dashboard.html";
+
+    }
+
+  });
+
+  // PASSWORD SHOW / HIDE
+
+  const togglePassword =
+    document.getElementById("togglePassword");
+
+  togglePassword.addEventListener("click", () => {
+
+    const type =
+      passwordInput.getAttribute("type") === "password"
+        ? "text"
+        : "password";
+
+    passwordInput.setAttribute("type", type);
+
+    togglePassword.innerHTML =
+      type === "password"
+        ? '<i class="fa-solid fa-eye"></i>'
+        : '<i class="fa-solid fa-eye-slash"></i>';
+
+  });
+
+</script>
+
+</body>
+
+</html>
