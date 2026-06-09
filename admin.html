@@ -1076,15 +1076,15 @@
                 <div class="info-box">
                     <h3><i class="fa-solid fa-file-alt"></i> Recent Documents</h3>
                     <div class="info-row"><span class="info-label">📄 Affidavit_Michael.pdf</span><span
-                            class="info-value" style="color:#60a5fa;font-size:12px;">View</span></div>
+                            class="info-value errorpage" style="color:#60a5fa;font-size:12px;">View</span></div>
                     <div class="info-row"><span class="info-label">📄 Divorce_Petition_Priya.pdf</span><span
-                            class="info-value" style="color:#60a5fa;font-size:12px;">View</span></div>
-                    <div class="info-row"><span class="info-label">📄 Evidence_Robert.pdf</span><span class="info-value"
+                            class="info-value errorpage" style="color:#60a5fa;font-size:12px;">View</span></div>
+                    <div class="info-row"><span class="info-label">📄 Evidence_Robert.pdf</span><span class="info-value errorpage"
                             style="color:#60a5fa;font-size:12px;">View</span></div>
-                    <div class="info-row"><span class="info-label">📄 Contract_Anita.pdf</span><span class="info-value"
+                    <div class="info-row"><span class="info-label">📄 Contract_Anita.pdf</span><span class="info-value errorpage"
                             style="color:#60a5fa;font-size:12px;">View</span></div>
                     <div class="info-row"><span class="info-label">📄 CyberReport_James.pdf</span><span
-                            class="info-value" style="color:#60a5fa;font-size:12px;">View</span></div>
+                            class="info-value errorpage" style="color:#60a5fa;font-size:12px;">View</span></div>
                 </div>
             </div>
         </div>
@@ -1571,7 +1571,7 @@ const newPassword = document.querySelector('input[placeholder="Enter New Passwor
 
 firmName.addEventListener("input", () => {
 
-  firmName.value = firmName.value.replace(/[0-9]/g, '');
+  firmName.value = firmName.value.replace(/[^a-zA-Z\s.&]/g, '');
 
 });
 

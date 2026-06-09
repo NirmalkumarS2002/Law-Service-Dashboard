@@ -254,7 +254,7 @@
 
         .logo img {
 
-                width:clamp(170px,19vw,210px);  
+            width: clamp(170px, 19vw, 210px);
 
             object-fit: contain;
         }
@@ -674,7 +674,7 @@
 
                     <input type="password" id="password" placeholder="Create password">
 
-                    <span class="eye-btn" id="togglePassword">
+                    <span class="eye-btn" id="togglePassword1">
 
                         <i class="fa-solid fa-eye"></i>
 
@@ -695,6 +695,11 @@
                     <i class="fa-solid fa-lock left-icon"></i>
 
                     <input type="password" id="confirmPassword" placeholder="Confirm password">
+                       <span class="eye-btn" id="togglePassword2">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </span>
 
                 </div>
 
@@ -729,28 +734,50 @@
     <script>
 
         // PASSWORD TOGGLE
+const togglePassword1 =
+    document.getElementById("togglePassword1");
 
-        const togglePassword =
-            document.getElementById("togglePassword");
+const password1 =
+    document.getElementById("password");
 
-        const password =
-            document.getElementById("password");
+togglePassword1.addEventListener("click", () => {
 
-        togglePassword.addEventListener("click", () => {
+    const type =
+        password.type === "password"
+            ? "text"
+            : "password";
 
-            const type =
-                password.type === "password"
-                    ? "text"
-                    : "password";
+    password1.type = type;
 
-            password.type = type;
+    togglePassword1.innerHTML =
+        type === "password"
+            ? '<i class="fa-solid fa-eye"></i>'
+            : '<i class="fa-solid fa-eye-slash"></i>';
 
-            togglePassword.innerHTML =
-                type === "password"
-                    ? '<i class="fa-solid fa-eye"></i>'
-                    : '<i class="fa-solid fa-eye-slash"></i>';
+});
 
-        });
+
+const togglePassword2 =
+    document.getElementById("togglePassword2");
+
+const password2 =
+    document.getElementById("confirmPassword");
+
+togglePassword2.addEventListener("click", () => {
+
+    const type =
+        password2.type === "password"
+            ? "text"
+            : "password";
+
+    password2.type = type;
+
+    togglePassword2.innerHTML =
+        type === "password"
+            ? '<i class="fa-solid fa-eye"></i>'
+            : '<i class="fa-solid fa-eye-slash"></i>';
+
+});
 
         // VALIDATION
 
@@ -780,14 +807,23 @@
                 return;
             }
             // NAME VALIDATION
-
             if (name === "") {
 
                 alert("Please enter full name");
-
                 return;
+
             }
 
+            /* NO NUMBERS & SPECIAL CHARACTERS */
+
+            const namePattern = /^[A-Za-z ]+$/;
+
+            if (!namePattern.test(name)) {
+
+                alert("Name should contain only letters");
+                return;
+
+            }
             // NUMBER VALIDATION
 
             const numberPattern = /\d/;
