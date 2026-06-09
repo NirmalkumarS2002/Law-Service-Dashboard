@@ -809,7 +809,7 @@
 
         <!-- ===== CLIENTS ===== -->
         <div class="content" id="page-clients" style="padding:22px;">
-            <div class="page-title">Client Case Management</div>
+            <div class="page-title">Client Portal</div>
             <div class="page-sub">Manage all registered clients and their case details</div>
             <div class="cards">
                 <div class="card">
@@ -953,7 +953,7 @@
 
         <!-- ===== PROJECTS (CASES) ===== -->
         <div class="content" id="page-projects" style="padding:22px;">
-            <div class="page-title">Case Management</div>
+            <div class="page-title">Projects</div>
             <div class="page-sub">Track all legal cases and their progress</div>
             <div class="cards">
                 <div class="card">
@@ -1203,7 +1203,7 @@
 
         <!-- ===== REPORTS ===== -->
         <div class="content" id="page-reports" style="padding:22px;">
-            <div class="page-title">Legal Analytics & Analytics</div>
+            <div class="page-title">Legal Analytics</div>
             <div class="page-sub">Firm performance overview and financial summary</div>
             <div class="cards">
                 <div class="card">
@@ -1482,7 +1482,7 @@
         const menuItems = document.querySelectorAll('.menu li[data-page]');
         const pages = document.querySelectorAll('.content');
         const pageTitle = document.getElementById('pageTitle');
-        const pageTitles = { dashboard: 'Legal Overview', clients: 'Client Portal', projects: 'Case Management', meetings: 'Court Schedule', reports: 'Legal Analytics', settings: 'Settings' };
+        const pageTitles = { dashboard: 'Legal Overview', clients: 'Client Portal', projects: 'projects', meetings: 'Court Schedule', reports: 'Legal Analytics', settings: 'Settings' };
 
         menuItems.forEach(item => {
             item.addEventListener('click', () => {
