@@ -494,6 +494,10 @@
             margin-bottom: 12px;
         }
 
+            input[type="password"]{
+            display: flex;
+            align-items: center;
+        }
         .input-field:focus {
             border-color: rgba(212, 175, 55, 0.4);
         }
@@ -1647,14 +1651,6 @@ passwordBtn.addEventListener("click", () => {
 
   }
 
-  /* CHECK BOTH PASSWORDS MATCH */
-
-  if (currentPassword.value !== newPassword.value) {
-
-    alert("Passwords do not match");
-    return;
-
-  }
 
   alert("Password Changed Successfully");
 
