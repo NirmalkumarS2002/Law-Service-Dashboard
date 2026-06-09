@@ -2,13 +2,16 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0" />
 
   <title>Law Service Login</title>
 
   <!-- GOOGLE FONT -->
+
   <link rel="preconnect"
     href="https://fonts.googleapis.com">
 
@@ -17,6 +20,7 @@
     rel="stylesheet">
 
   <!-- FONT AWESOME -->
+
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -248,8 +252,7 @@
 
     /* INPUTS */
 
-    .input-field input,
-    .input-field select{
+    .input-field input{
 
       width:100%;
 
@@ -278,24 +281,142 @@
       color:#bdbdbd;
     }
 
-    .input-field select option{
-      background: rgba(0, 0, 0, 0.884);
-      color:white;
-    }
-
-    
-    .input-field select option:hover{
-      background: rgba(0, 0, 0, 0.884);
-      color:white;
-    }
-
-    .input-field input:focus,
-    .input-field select:focus{
+    .input-field input:focus{
 
       border-color:#f5d76e;
 
       box-shadow:
       0 0 10px rgba(212,175,55,0.1);
+    }
+
+    /* CUSTOM DROPDOWN */
+
+    .custom-select{
+      position:relative;
+    }
+
+    .select-btn{
+
+      width:100%;
+
+      height:46px;
+
+      border-radius:12px;
+
+      border:1px solid rgba(212,175,55,0.35);
+
+      background:rgba(0,0,0,0.35);
+
+      padding:0 16px;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    .select-btn:hover{
+
+      border-color:#f5d76e;
+
+      box-shadow:
+      0 0 10px rgba(212,175,55,0.1);
+    }
+
+    .select-left{
+
+      display:flex;
+
+      align-items:center;
+
+      gap:12px;
+    }
+
+    .select-left i{
+
+      color:#d4af37;
+
+      font-size:14px;
+    }
+
+    .select-left span{
+
+      color:white;
+
+      font-size:13px;
+    }
+
+    .arrow{
+
+      color:#d4af37;
+
+      font-size:12px;
+
+      transition:0.3s;
+    }
+
+    .custom-select.active .arrow{
+
+      transform:rotate(180deg);
+    }
+
+    /* OPTIONS */
+
+    .select-options{
+
+      position:absolute;
+
+      top:54px;
+
+      left:0;
+
+      width:100%;
+
+      background:#111;
+
+      border:1px solid rgba(212,175,55,0.35);
+
+      border-radius:12px;
+
+      overflow:hidden;
+
+      display:none;
+
+      z-index:100;
+
+      box-shadow:
+      0 10px 20px rgba(0,0,0,0.35);
+    }
+
+    .custom-select.active .select-options{
+      display:block;
+    }
+
+    /* OPTION */
+
+    .option{
+
+      padding:13px 16px;
+
+      color:#f5d76e;
+
+      font-size:13px;
+
+      cursor:pointer;
+
+      transition:0.25s;
+    }
+
+    .option:hover{
+
+      background:#c89b2d;
+
+      color:#000;
     }
 
     /* EYE BUTTON */
@@ -427,6 +548,7 @@
     }
 
   </style>
+
 </head>
 
 <body>
@@ -445,9 +567,13 @@
 
     <div class="logowrap">
 
-    <a href="index.html">  <img src="./src/logo.webp"
-        alt="company logo"
-        class="companylogo"></a>
+      <a href="index.html">
+
+        <img src="./src/logo.webp"
+          alt="company logo"
+          class="companylogo">
+
+      </a>
 
     </div>
 
@@ -485,19 +611,45 @@
 
       <label>Select Role</label>
 
-      <div class="input-field">
+      <div class="custom-select">
 
-        <i class="fa-solid fa-user-shield left-icon"></i>
+        <!-- BUTTON -->
 
-        <select>
+        <div class="select-btn" id="selectBtn">
 
-          <option>Select Role</option>
+          <div class="select-left">
 
-          <option>Admin</option>
+            <i class="fa-solid fa-user-shield"></i>
 
-          <option>Client</option>
+            <span id="selectedText">
+              Select Role
+            </span>
 
-        </select>
+          </div>
+
+          <i class="fa-solid fa-chevron-down arrow"></i>
+
+        </div>
+
+        <!-- OPTIONS -->
+
+        <div class="select-options" id="selectOptions">
+
+          <div class="option"
+            data-value="Admin">
+
+            Admin
+
+          </div>
+
+          <div class="option"
+            data-value="Client">
+
+            Client
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -513,10 +665,10 @@
 
         <i class="fa-solid fa-envelope left-icon"></i>
 
-      <input
-  type="email"
-  id="email"
-  placeholder="Enter your email address">
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email address">
 
       </div>
 
@@ -578,7 +730,7 @@
 
     <div class="footer-text">
 
-     Don't have an account?
+      Don't have an account?
 
       <a href="sign.html">
         Sign Up
@@ -590,10 +742,61 @@
 
 <script>
 
-  // GET FORM ELEMENTS
+  /* CUSTOM DROPDOWN */
 
-  const roleSelect =
-    document.querySelector("select");
+  const customSelect =
+    document.querySelector(".custom-select");
+
+  const selectBtn =
+    document.getElementById("selectBtn");
+
+  const selectedText =
+    document.getElementById("selectedText");
+
+  const options =
+    document.querySelectorAll(".option");
+
+  let selectedRole = "";
+
+  /* OPEN */
+
+  selectBtn.addEventListener("click", () => {
+
+    customSelect.classList.toggle("active");
+
+  });
+
+  /* SELECT */
+
+  options.forEach((option) => {
+
+    option.addEventListener("click", () => {
+
+      selectedText.innerText =
+        option.innerText;
+
+      selectedRole =
+        option.dataset.value;
+
+      customSelect.classList.remove("active");
+
+    });
+
+  });
+
+  /* OUTSIDE CLICK */
+
+  document.addEventListener("click", (e) => {
+
+    if(!customSelect.contains(e.target)){
+
+      customSelect.classList.remove("active");
+
+    }
+
+  });
+
+  // GET FORM ELEMENTS
 
   const emailInput =
     document.querySelector('input[type="email"]');
@@ -611,7 +814,7 @@
     e.preventDefault();
 
     const role =
-      roleSelect.value.trim();
+      selectedRole;
 
     const email =
       emailInput.value.trim();
@@ -621,7 +824,7 @@
 
     // ROLE VALIDATION
 
-    if(role === "Select Role"){
+    if(role === ""){
 
       alert("Please select role");
 
@@ -673,31 +876,27 @@
 
     // ROLE BASED REDIRECT
 
-   // ROLE BASED REDIRECT
+    if(role === "Admin"){
 
-if(role === "Admin"){
+      localStorage.setItem(
+        "adminEmail",
+        email
+      );
 
-  // SAVE EMAIL
+      window.location.href =
+        "admin.html";
+    }
 
-  localStorage.setItem(
-    "adminEmail",
-    email
-  );
+    else if(role === "Client"){
 
-  window.location.href =
-    "admin.html";
-}
+      localStorage.setItem(
+        "adminEmail",
+        email
+      );
 
-else if(role === "Client"){
-
-  localStorage.setItem(
-    "adminEmail",
-    email
-  );
-
-  window.location.href =
-    "client.html";
-}
+      window.location.href =
+        "client.html";
+    }
 
   });
 

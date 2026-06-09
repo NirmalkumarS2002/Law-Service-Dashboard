@@ -2,488 +2,628 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
 
     <title>Law Service Sign Up</title>
 
     <!-- GOOGLE FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        body {
+        body{
 
-            font-family: 'Poppins', sans-serif;
+            font-family:'Poppins', sans-serif;
 
-            min-height: 100vh;
+            min-height:100vh;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
 
-            padding: 10px;
+            padding:10px;
 
-            overflow: auto;
+            overflow:auto;
 
             background:
-                linear-gradient(rgba(0, 0, 0, 0.336),
-                    rgba(0, 0, 0, 0.418)),
-                url('./src/signup-bg.webp');
+            linear-gradient(
+                rgba(0,0,0,0.336),
+                rgba(0,0,0,0.418)
+            ),
+            url('./src/signup-bg.webp');
 
-            background-size: cover;
-            background-position: center;
+            background-size:cover;
+            background-position:center;
         }
 
         /* MAIN CONTAINER */
 
-        .signup-container {
+        .signup-container{
 
-            width: 900px;
+            width:900px;
 
-            display: flex;
+            display:flex;
 
-            overflow: hidden;
+            overflow:hidden;
 
-            border-radius: 22px;
+            border-radius:22px;
 
-            background: rgba(0, 0, 0, 0.55);
+            background:rgba(0,0,0,0.55);
 
-            border: 1px solid rgba(212, 175, 55, 0.15);
+            border:1px solid rgba(212,175,55,0.15);
 
-            backdrop-filter: blur(8px);
+            backdrop-filter:blur(8px);
 
             box-shadow:
-                0 0 20px rgba(0, 0, 0, 0.4);
+            0 0 20px rgba(0,0,0,0.4);
         }
 
         /* LEFT SIDE */
 
-        .left-side {
+        .left-side{
 
-            width: 43%;
+            width:43%;
 
-            padding: 24px 22px;
+            padding:24px 22px;
 
             background:
-                linear-gradient(180deg,
-                    rgba(17, 17, 17, 0.96),
-                    rgba(30, 20, 5, 0.96));
+            linear-gradient(
+                180deg,
+                rgba(17,17,17,0.96),
+                rgba(30,20,5,0.96)
+            );
 
-            position: relative;
+            position:relative;
 
-            overflow: hidden;
+            overflow:hidden;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
         }
 
-        .left-side::before {
+        .left-side::before{
 
-            content: "";
+            content:"";
 
-            position: absolute;
+            position:absolute;
 
-            width: 220px;
-            height: 220px;
+            width:220px;
+            height:220px;
 
-            border-radius: 50%;
+            border-radius:50%;
 
             background:
-                rgba(212, 175, 55, 0.04);
+            rgba(212,175,55,0.04);
 
-            top: -100px;
-            left: -100px;
+            top:-100px;
+            left:-100px;
 
-            filter: blur(30px);
+            filter:blur(30px);
         }
 
         /* BADGE */
 
-        .badge {
+        .badge{
 
-            width: 54px;
-            height: 54px;
+            width:54px;
+            height:54px;
 
-            border-radius: 16px;
+            border-radius:16px;
 
             background:
-                linear-gradient(135deg,
-                    #c89b2d,
-                    #f5de87);
+            linear-gradient(
+                135deg,
+                #c89b2d,
+                #f5de87
+            );
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
 
-            margin-bottom: 18px;
+            margin-bottom:18px;
 
-            position: relative;
-            z-index: 2;
+            position:relative;
+            z-index:2;
         }
 
-        .badge i {
+        .badge i{
 
-            font-size: 22px;
+            font-size:22px;
 
-            color: black;
+            color:black;
         }
 
         /* LEFT TITLE */
 
-        .left-side h1 {
+        .left-side h1{
 
-            font-size: 28px;
+            font-size:28px;
 
-            color: white;
+            color:white;
 
-            line-height: 1.25;
+            line-height:1.25;
 
-            margin-bottom: 12px;
+            margin-bottom:12px;
 
-            position: relative;
-            z-index: 2;
+            position:relative;
+            z-index:2;
         }
 
         /* LEFT DESCRIPTION */
 
-        .left-side p {
+        .left-side p{
 
-            color: #d1d1d1;
+            color:#d1d1d1;
 
-            font-size: 13px;
+            font-size:13px;
 
-            line-height: 1.7;
+            line-height:1.7;
 
-            margin-bottom: 20px;
+            margin-bottom:20px;
 
-            position: relative;
-            z-index: 2;
+            position:relative;
+            z-index:2;
         }
 
         /* FEATURE */
 
-        .feature-box {
+        .feature-box{
 
-            display: flex;
+            display:flex;
 
-            gap: 10px;
+            gap:10px;
 
-            margin-bottom: 16px;
+            margin-bottom:16px;
 
-            position: relative;
-            z-index: 2;
+            position:relative;
+            z-index:2;
         }
 
-        .feature-icon {
+        .feature-icon{
 
-            width: 42px;
-            height: 42px;
+            width:42px;
+            height:42px;
 
-            border-radius: 12px;
+            border-radius:12px;
 
             background:
-                rgba(255, 255, 255, 0.05);
+            rgba(255,255,255,0.05);
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
 
-            flex-shrink: 0;
+            flex-shrink:0;
         }
 
-        .feature-icon i {
+        .feature-icon i{
 
-            color: #f5d76e;
+            color:#f5d76e;
 
-            font-size: 15px;
+            font-size:15px;
         }
 
-        .feature-box h3 {
+        .feature-box h3{
 
-            color: white;
+            color:white;
 
-            font-size: 16px;
+            font-size:16px;
 
-            margin-bottom: 2px;
+            margin-bottom:2px;
         }
 
-        .feature-box p {
+        .feature-box p{
 
-            margin: 0;
+            margin:0;
 
-            font-size: 12px;
+            font-size:12px;
 
-            line-height: 1.5;
+            line-height:1.5;
         }
 
         /* RIGHT SIDE */
 
-        .right-side {
+        .right-side{
 
-            width: 57%;
+            width:57%;
 
-            padding: 20px;
+            padding:20px;
 
             background:
-                rgba(0, 0, 0, 0.92);
+            rgba(0,0,0,0.92);
         }
 
         /* LOGO */
 
-        .logo {
+        .logo{
 
-            display: flex;
-            justify-content: center;
+            display:flex;
+            justify-content:center;
 
-            margin-bottom: 10px;
+            margin-bottom:10px;
         }
 
-        .logo img {
+        .logo img{
 
-            width: clamp(170px, 19vw, 210px);
+            width:clamp(170px,19vw,210px);
 
-            object-fit: contain;
+            object-fit:contain;
         }
 
         /* TITLE */
 
-        .title {
+        .title{
 
-            text-align: center;
+            text-align:center;
 
-            color: white;
+            color:white;
 
-            font-size: 24px;
+            font-size:24px;
 
-            font-weight: 800;
+            font-weight:800;
 
-            margin-bottom: 2px;
+            margin-bottom:2px;
         }
 
-        .subtitle {
+        .subtitle{
 
-            text-align: center;
+            text-align:center;
 
-            color: #bdbdbd;
+            color:#bdbdbd;
 
-            font-size: 12px;
+            font-size:12px;
 
-            margin-bottom: 18px;
+            margin-bottom:18px;
         }
 
         /* INPUT */
 
-        .input-box {
+        .input-box{
 
-            margin-bottom: 13px;
+            margin-bottom:13px;
         }
 
-        .input-box label {
+        .input-box label{
 
-            display: block;
+            display:block;
 
-            margin-bottom: 5px;
+            margin-bottom:5px;
 
-            color: #f5d76e;
+            color:#f5d76e;
 
-            font-size: 12px;
+            font-size:12px;
 
-            font-weight: 600;
+            font-weight:600;
         }
 
-        .input-field {
+        .input-field{
 
-            position: relative;
+            position:relative;
         }
 
-        .input-field .left-icon {
+        .input-field .left-icon{
 
-            position: absolute;
+            position:absolute;
 
-            left: 14px;
-            top: 50%;
+            left:14px;
+            top:50%;
 
-            transform: translateY(-50%);
+            transform:translateY(-50%);
 
-            color: #d4af37;
+            color:#d4af37;
 
-            font-size: 14px;
+            font-size:14px;
         }
 
-        .input-field input,
-        .input-field select {
+        .input-field input{
 
-            width: 100%;
+            width:100%;
 
-            height: 46px;
+            height:46px;
 
-            border-radius: 12px;
+            border-radius:12px;
 
-            border: 1px solid rgba(212, 175, 55, 0.18);
+            border:1px solid rgba(212,175,55,0.18);
 
             background:
-                rgba(255, 255, 255, 0.02);
+            rgba(255,255,255,0.02);
 
-            color: white;
+            color:white;
 
-            font-size: 13px;
+            font-size:13px;
 
-            padding-left: 45px;
-            padding-right: 40px;
+            padding-left:45px;
+            padding-right:40px;
 
-            outline: none;
+            outline:none;
 
-            transition: 0.3s;
+            transition:0.3s;
         }
 
-        .input-field input::placeholder {
-            color: #9d9d9d;
+        .input-field input::placeholder{
+            color:#9d9d9d;
         }
 
-        .input-field select option {
-            color: white;
-            background: rgba(0, 0, 0, 0.904);
-        }
+        .input-field input:focus{
 
-        .input-field input:focus,
-        .input-field select:focus {
-
-            border-color: #f5d76e;
+            border-color:#f5d76e;
 
             box-shadow:
-                0 0 10px rgba(212, 175, 55, 0.08);
+            0 0 10px rgba(212,175,55,0.08);
+        }
+
+        /* CUSTOM DROPDOWN */
+
+        .custom-select{
+            position:relative;
+        }
+
+        .select-btn{
+
+            width:100%;
+
+            height:46px;
+
+            border-radius:12px;
+
+            border:1px solid rgba(212,175,55,0.18);
+
+            background:
+            rgba(255,255,255,0.02);
+
+            padding:0 16px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:space-between;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        .select-btn:hover{
+
+            border-color:#f5d76e;
+
+            box-shadow:
+            0 0 10px rgba(212,175,55,0.08);
+        }
+
+        .select-left{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:12px;
+        }
+
+        .select-left i{
+
+            color:#d4af37;
+
+            font-size:14px;
+        }
+
+        .select-left span{
+
+            color:white;
+
+            font-size:13px;
+        }
+
+        .arrow{
+
+            color:#d4af37;
+
+            font-size:12px;
+
+            transition:0.3s;
+        }
+
+        .custom-select.active .arrow{
+
+            transform:rotate(180deg);
+        }
+
+        /* OPTIONS */
+
+        .select-options{
+
+            position:absolute;
+
+            top:54px;
+
+            left:0;
+
+            width:100%;
+
+            background:#111;
+
+            border:1px solid rgba(212,175,55,0.18);
+
+            border-radius:12px;
+
+            overflow:hidden;
+
+            display:none;
+
+            z-index:100;
+
+            box-shadow:
+            0 10px 20px rgba(0,0,0,0.35);
+        }
+
+        .custom-select.active .select-options{
+            display:block;
+        }
+
+        /* OPTION */
+
+        .option{
+
+            padding:13px 16px;
+
+            color:#f5d76e;
+
+            font-size:13px;
+
+            cursor:pointer;
+
+            transition:0.25s;
+        }
+
+        .option:hover{
+
+            background:#c89b2d;
+
+            color:#000;
         }
 
         /* EYE */
 
-        .eye-btn {
+        .eye-btn{
 
-            position: absolute;
+            position:absolute;
 
-            right: 14px;
-            top: 50%;
+            right:14px;
+            top:50%;
 
-            transform: translateY(-50%);
+            transform:translateY(-50%);
 
-            color: #d4af37;
+            color:#d4af37;
 
-            cursor: pointer;
+            cursor:pointer;
 
-            font-size: 14px;
+            font-size:14px;
         }
 
         /* BUTTON */
 
-        .signup-btn {
+        .signup-btn{
 
-            width: 100%;
+            width:100%;
 
-            height: 48px;
+            height:48px;
 
-            border: none;
+            border:none;
 
-            border-radius: 12px;
+            border-radius:12px;
 
-            margin-top: 6px;
+            margin-top:6px;
 
             background:
-                linear-gradient(135deg,
-                    #c89
-                    b2d,
-                    #f5de87);
+            linear-gradient(
+                135deg,
+                #c89b2d,
+                #f5de87
+            );
 
-            color: black;
+            color:black;
 
-            font-size: 14px;
+            font-size:14px;
 
-            font-weight: 700;
+            font-weight:700;
 
-            cursor: pointer;
+            cursor:pointer;
 
-            transition: 0.3s;
+            transition:0.3s;
         }
 
-        .signup-btn:hover {
+        .signup-btn:hover{
 
-            transform: translateY(-2px);
+            transform:translateY(-2px);
 
             box-shadow:
-                0 8px 16px rgba(212, 175, 55, 0.12);
+            0 8px 16px rgba(212,175,55,0.12);
         }
 
         /* FOOTER */
 
-        .footer {
+        .footer{
 
-            text-align: center;
+            text-align:center;
 
-            margin-top: 14px;
+            margin-top:14px;
 
-            color: #bdbdbd;
+            color:#bdbdbd;
 
-            font-size: 13px;
+            font-size:13px;
         }
 
-        .footer a {
+        .footer a{
 
-            color: #f5d76e;
+            color:#f5d76e;
 
-            text-decoration: none;
+            text-decoration:none;
 
-            font-weight: 600;
+            font-weight:600;
         }
 
         /* MOBILE */
 
-        @media(max-width:850px) {
+        @media(max-width:850px){
 
-            .signup-container {
+            .signup-container{
 
-                flex-direction: column;
+                flex-direction:column;
             }
 
             .left-side,
-            .right-side {
+            .right-side{
 
-                width: 100%;
+                width:100%;
             }
 
-            .left-side {
+            .left-side{
 
-                padding: 20px 18px;
+                padding:20px 18px;
             }
 
-            .right-side {
+            .right-side{
 
-                padding: 18px;
+                padding:18px;
             }
 
-            .left-side h1 {
+            .left-side h1{
 
-                font-size: 24px;
+                font-size:24px;
             }
 
-            .title {
+            .title{
 
-                font-size: 18px;
+                font-size:18px;
             }
 
         }
+
     </style>
+
 </head>
 
 <body>
@@ -590,7 +730,12 @@
 
             <div class="logo">
 
-                <a href="sign.html"><img src="./src/logo.webp" alt="Stackly Logo"></a>
+                <a href="sign.html">
+
+                    <img src="./src/logo.webp"
+                        alt="Stackly Logo">
+
+                </a>
 
             </div>
 
@@ -614,19 +759,49 @@
 
                 <label>Select Role</label>
 
-                <div class="input-field">
+                <div class="custom-select">
 
-                    <i class="fa-solid fa-user-shield left-icon"></i>
+                    <!-- BUTTON -->
 
-                    <select id="role">
+                    <div class="select-btn"
+                        id="selectBtn">
 
-                        <option>Choose Role</option>
+                        <div class="select-left">
 
-                        <option>Admin</option>
+                            <i class="fa-solid fa-user-shield"></i>
 
-                        <option>Client</option>
+                            <span id="selectedText">
 
-                    </select>
+                                Choose Role
+
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+
+                    </div>
+
+                    <!-- OPTIONS -->
+
+                    <div class="select-options"
+                        id="selectOptions">
+
+                        <div class="option"
+                            data-value="Admin">
+
+                            Admin
+
+                        </div>
+
+                        <div class="option"
+                            data-value="Client">
+
+                            Client
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -642,7 +817,9 @@
 
                     <i class="fa-solid fa-user left-icon"></i>
 
-                    <input type="text" id="name" placeholder="Enter your full name">
+                    <input type="text"
+                        id="name"
+                        placeholder="Enter your full name">
 
                 </div>
 
@@ -658,7 +835,9 @@
 
                     <i class="fa-solid fa-envelope left-icon"></i>
 
-                    <input type="email" id="email" placeholder="Enter your email">
+                    <input type="email"
+                        id="email"
+                        placeholder="Enter your email">
 
                 </div>
 
@@ -674,9 +853,12 @@
 
                     <i class="fa-solid fa-lock left-icon"></i>
 
-                    <input type="password" id="password" placeholder="Create password">
+                    <input type="password"
+                        id="password"
+                        placeholder="Create password">
 
-                    <span class="eye-btn" id="togglePassword1">
+                    <span class="eye-btn"
+                        id="togglePassword1">
 
                         <i class="fa-solid fa-eye"></i>
 
@@ -696,8 +878,12 @@
 
                     <i class="fa-solid fa-lock left-icon"></i>
 
-                    <input type="password" id="confirmPassword" placeholder="Confirm password">
-                       <span class="eye-btn" id="togglePassword2">
+                    <input type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm password">
+
+                    <span class="eye-btn"
+                        id="togglePassword2">
 
                         <i class="fa-solid fa-eye"></i>
 
@@ -709,7 +895,8 @@
 
             <!-- BUTTON -->
 
-            <button class="signup-btn" id="signupBtn">
+            <button class="signup-btn"
+                id="signupBtn">
 
                 Create Account
 
@@ -733,9 +920,65 @@
 
     </div>
 
-    <script>
+<script>
 
-        // PASSWORD TOGGLE
+/* CUSTOM DROPDOWN */
+
+const customSelect =
+    document.querySelector(".custom-select");
+
+const selectBtn =
+    document.getElementById("selectBtn");
+
+const selectedText =
+    document.getElementById("selectedText");
+
+const options =
+    document.querySelectorAll(".option");
+
+let selectedRole = "";
+
+/* OPEN */
+
+selectBtn.addEventListener("click", () => {
+
+    customSelect.classList.toggle("active");
+
+});
+
+/* SELECT */
+
+options.forEach((option) => {
+
+    option.addEventListener("click", () => {
+
+        selectedText.innerText =
+            option.innerText;
+
+        selectedRole =
+            option.dataset.value;
+
+        customSelect.classList.remove("active");
+
+    });
+
+});
+
+/* OUTSIDE CLICK */
+
+document.addEventListener("click", (e) => {
+
+    if(!customSelect.contains(e.target)){
+
+        customSelect.classList.remove("active");
+
+    }
+
+});
+
+
+/* PASSWORD TOGGLE */
+
 const togglePassword1 =
     document.getElementById("togglePassword1");
 
@@ -745,16 +988,16 @@ const password1 =
 togglePassword1.addEventListener("click", () => {
 
     const type =
-        password.type === "password"
-            ? "text"
-            : "password";
+        password1.type === "password"
+        ? "text"
+        : "password";
 
     password1.type = type;
 
     togglePassword1.innerHTML =
         type === "password"
-            ? '<i class="fa-solid fa-eye"></i>'
-            : '<i class="fa-solid fa-eye-slash"></i>';
+        ? '<i class="fa-solid fa-eye"></i>'
+        : '<i class="fa-solid fa-eye-slash"></i>';
 
 });
 
@@ -769,108 +1012,127 @@ togglePassword2.addEventListener("click", () => {
 
     const type =
         password2.type === "password"
-            ? "text"
-            : "password";
+        ? "text"
+        : "password";
 
     password2.type = type;
 
     togglePassword2.innerHTML =
         type === "password"
-            ? '<i class="fa-solid fa-eye"></i>'
-            : '<i class="fa-solid fa-eye-slash"></i>';
+        ? '<i class="fa-solid fa-eye"></i>'
+        : '<i class="fa-solid fa-eye-slash"></i>';
 
 });
 
-        // VALIDATION
 
-        const signupBtn =
-            document.getElementById("signupBtn");
+/* NAME INPUT RESTRICTION */
 
-        signupBtn.addEventListener("click", () => {
+const nameField =
+    document.getElementById("name");
 
-            const role =
-                document.getElementById("role").value;
+nameField.addEventListener("input", () => {
 
-            const name =
-                document.getElementById("name").value.trim();
+    nameField.value =
+        nameField.value.replace(/[^A-Za-z ]/g, '');
 
-            const email =
-                document.getElementById("email").value.trim();
+});
 
-            const password =
-                document.getElementById("password").value.trim();
 
-            const confirmPassword =
-                document.getElementById("confirmPassword").value.trim();
+/* VALIDATION */
 
-            if (role === "Choose Role") {
+const signupBtn =
+    document.getElementById("signupBtn");
 
-                alert("Please select role");
-                return;
-            }
-            // NAME VALIDATION
-            if (name === "") {
+signupBtn.addEventListener("click", () => {
 
-                alert("Please enter full name");
-                return;
+    const role =
+        selectedRole;
 
-            }
+    const name =
+        document.getElementById("name").value.trim();
 
-            /* NO NUMBERS & SPECIAL CHARACTERS */
+    const email =
+        document.getElementById("email").value.trim();
 
-            const namePattern = /^[A-Za-z ]+$/;
+    const password =
+        document.getElementById("password").value.trim();
 
-            if (!namePattern.test(name)) {
+    const confirmPassword =
+        document.getElementById("confirmPassword").value.trim();
 
-                alert("Name should contain only letters");
-                return;
+    /* ROLE */
 
-            }
-            // NUMBER VALIDATION
+    if(role === ""){
 
-            const numberPattern = /\d/;
+        alert("Please select role");
 
-            if (numberPattern.test(name)) {
+        return;
+    }
 
-                alert("Name should not contain numbers");
+    /* NAME */
 
-                return;
-            }
+    if(name === ""){
 
-            if (email === "") {
+        alert("Please enter full name");
 
-                alert("Please enter email");
-                return;
-            }
+        return;
+    }
 
-            const emailPattern =
-                /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    const namePattern =
+        /^[A-Za-z ]+$/;
 
-            if (!email.match(emailPattern)) {
+    if(!namePattern.test(name)){
 
-                alert("Please enter valid email");
-                return;
-            }
+        alert("Name should contain only letters");
 
-            if (password.length < 6) {
+        return;
+    }
 
-                alert("Password must be minimum 6 characters");
-                return;
-            }
+    /* EMAIL */
 
-            if (password !== confirmPassword) {
+    if(email === ""){
 
-                alert("Passwords do not match");
-                return;
-            }
+        alert("Please enter email");
 
-            alert("Account Created Successfully");
+        return;
+    }
 
-            window.location.href = "index.html";
+    const emailPattern =
+        /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-        });
+    if(!email.match(emailPattern)){
 
-    </script>
+        alert("Please enter valid email");
+
+        return;
+    }
+
+    /* PASSWORD */
+
+    if(password.length < 6){
+
+        alert("Password must be minimum 6 characters");
+
+        return;
+    }
+
+    /* CONFIRM PASSWORD */
+
+    if(password !== confirmPassword){
+
+        alert("Passwords do not match");
+
+        return;
+    }
+
+    alert("Account Created Successfully");
+
+    window.location.href =
+        "index.html";
+
+});
+
+</script>
 
 </body>
 
