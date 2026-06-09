@@ -645,7 +645,7 @@
             <li data-page="projects"><a><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
             <li data-page="meetings"><a><i class="fa-solid fa-calendar-check"></i> Court Schedule</a></li>
             <li data-page="reports"><a><i class="fa-solid fa-chart-pie"></i> Legal Analytics</a></li>
-            <li data-page="settings"><a><i class="fa-solid fa-gear"></i> Firm Settings</a></li>
+            <li data-page="settings"><a><i class="fa-solid fa-gear"></i>Settings</a></li>
             <li id="logoutItem"><a><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
         </ul>
     </div>
@@ -659,8 +659,8 @@
             <div class="admin-info">
                 <div class="avatar" id="avatarEl">A</div>
                 <div>
-                    <h4 id="adminEmail">admin@lexcorp.com</h4>
-                    <p style="color:#888;font-size:12px;">Senior Legal Administrator</p>
+                    <h4 id="adminEmail">client@lexcorp.com</h4>
+                    <p style="color:#888;font-size:12px;">Legal client</p>
                 </div>
             </div>
         </div>
@@ -1368,7 +1368,7 @@
 
         <!-- ===== SETTINGS ===== -->
         <div class="content" id="page-settings" style="padding:22px;">
-            <div class="page-title">Firm Settings</div>
+            <div class="page-title">Settings</div>
             <div class="page-sub">Manage your firm profile, preferences and account settings</div>
             <div class="grid-2">
                 <div>
@@ -1377,7 +1377,7 @@
                         <label style="color:#888;font-size:12px;">Firm Name</label>
                         <input class="input-field" value="LexCorp Law Associates">
                         <label style="color:#888;font-size:12px;">Email Address</label>
-                        <input class="input-field" value="admin@lexcorp.com">
+                        <input class="input-field" value="client@lexcorp.com">
                         <label style="color:#888;font-size:12px;">Phone Number</label>
                         <input class="input-field" value="+91 98765 43210">
                         <label style="color:#888;font-size:12px;">Office Address</label>
@@ -1478,7 +1478,7 @@
         const menuItems = document.querySelectorAll('.menu li[data-page]');
         const pages = document.querySelectorAll('.content');
         const pageTitle = document.getElementById('pageTitle');
-        const pageTitles = { dashboard: 'Legal Overview', clients: 'Client Portal', projects: 'Case Management', meetings: 'Court Schedule', reports: 'Legal Analytics', settings: 'Firm Settings' };
+        const pageTitles = { dashboard: 'Legal Overview', clients: 'Client Portal', projects: 'Case Management', meetings: 'Court Schedule', reports: 'Legal Analytics', settings: 'Settings' };
 
         menuItems.forEach(item => {
             item.addEventListener('click', () => {
